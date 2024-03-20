@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-flow: column nowrap;
+            background-color: antiquewhite;
+        }
+
+        .header {
+            display: flex;
+            flex: 1 0 100px;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            border-bottom: 2px solid white;
+            background-color:grey;
+            color:honeydew;
+        }
+        .main {
+            padding: 50px 20px;
+            display: flex;
+            flex-flow: column nowrap;
+        }
+
+        .card {
+            border-radius: 15px;
+            border: 1px solid grey;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Lista de Produtos</h1>
+            
+        </div>
+        <div class="main">
+            <div class="card">
+                <!-- para todos os elementops da lista  eu vou printar-->
+                {%for prod in produtos%}
+                <p>{{prod}}</p>
+                {%endfor%}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
