@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-Vindo</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+        }
+        .container {
+            height: 100%;
+            width: 80%;
+            margin: auto;
+            display: flex;
+            flex-flow: column nowrap;
+            background-color: whitesmoke;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            height: 100px;
+            border-bottom: 2px solid white;
+            background-color: lightcyan;
+            border: 2px solid black;
+            color:black;
+        }
+
+        .main {
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            display: flex;
+            flex: 1;
+            flex-flow: column wrap;
+            height: 100%;
+        }
+
+        .header .link {
+            font-size: 20px;
+            text-decoration: none;
+            border: 1px solid aliceblue;
+            border-radius: 5px;
+            padding: 10px;
+            width: 150px;
+            text-align: center;
+            background-color: rgb(245, 204, 211);
+            color:darkslategrey;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Convidado 'nome' confirmado!</h1>
+
+            <!-- numero de convidados no total -->
+            <a class="link" href="{{url_for('login')}}">Anexar novo convidado</a>
+        </div>
+        <div class="main">
+            
+            
+        </div>
+    </div>
+
+</body>
+</html>

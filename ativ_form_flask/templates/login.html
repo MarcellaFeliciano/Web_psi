@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            height: 100%;
+            width: 80%;
+            margin: auto;
+            flex-flow: column nowrap;
+            background-color: whitesmoke;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            height: 100px;
+            border-bottom: 2px solid white;
+            background-color:pink;
+            color:honeydew;
+        }
+
+        .main {
+            padding: 50px 20px;
+            display: flex;
+            flex-flow: column nowrap;
+            height: 100%;
+        }
+
+        .login {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-items: flex-end;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .login h1 {
+            margin: 5px;
+            font-size: 40px;
+            color: grey;
+        }
+
+        .form {
+            background-color: grey;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid pink;
+            display: flex;
+            flex: 0;
+            align-items: center;
+        }
+
+        .form .input {
+            padding: 10px 10px;
+            border-radius: 5px;
+            border: 1px solid aliceblue;
+            width: 300px;
+            outline-color: lightcyan;
+            margin: 0 5px;
+        }
+
+        .form .button {
+            text-decoration: none;
+            border: 1px solid aliceblue;
+            border-radius: 5px;
+            padding: 10px;
+            width: 150px;
+            text-align: center;
+            background-color: lightcyan;
+            color:darkslategrey;
+            margin: 0 5px;
+        }
+    </style>
+    
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Seja bem vindo ao site de controle dos convidados!</h1>
+        </div>
+        <div class="main">
+            <h3> Informações do convidado:</h3>
+            <div class="login">
+                <h1>Login</h1>
+                <!-- form com o metodo post! o verbo http indica se vai achar ou não a pagina-->
+                <!-- action - link relativo ( quanndo clica no botão ele faz a ação ( gera o url para o link da função login \ caminho login com p metodo post))-->
+                <form class="form" action="{{ url_for('login') }}" method="POST"> 
+                    <input class="input" type="text" placeholder="Nome" name="nome">
+                    <input class="input" type="email" placeholder="Email" name="email">
+                    <input class="input" type="number" placeholder="Número de convidados" name="num_conv">
+                    <button class="button">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
