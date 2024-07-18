@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+
+</style>
+<body style="{{ 'background-color: ' + cor }}">
+
+    <h1>Bem vindo! Escolha uma cor:</h1>
+
+
+    <form action="{{ url_for('color') }}" method='GET'>
+        <select name='color'>
+            <option value="red">red</option>
+            <option value="green">green</option>
+            <option value="greenyellow">greenyellow</option>
+            <option value="pink">pink</option>
+
+            <input type="submit" value="Enviar">
+        </select>
+    </form>
+    
+</body>
+</html>
