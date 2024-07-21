@@ -35,14 +35,17 @@ def color():
 
 
     else:
-
+        # a variavel template = (a pagina html que será aberta como resposta, recebendo a varivel cor= a cor escolhida)
         template = render_template('color.html', cor=cor)
+        
         # faço a resposta com o arquivo html e a cor (variavel cor que será enviada ao html para ser usada no body )
         response = make_response(template)
-        response.delete_cookie("color") # desnecessario pois o cookie anida não existe
+        response.delete_cookie("color") # desnecessario pois o cookie ainda não existe
 
-        # crio o cookie
+        # crio o cookie  (chave = 'color' e o valor do cookie = cor)
         response.set_cookie("color", value=cor)
         return response
 
     return render_template('color.html', cor=request.cookies['color'])
+
+
