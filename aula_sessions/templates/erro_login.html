@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página inicial</title>
+    <title>Erro no login</title>
     <style>
         body {
             background-color: rgb(233, 233, 224);
@@ -22,9 +22,11 @@
 </head>
 
 <body>
-    <h1>Super Sistema de Login</h1>
+    <h1>Erro em fazer o login! </h1>
+    <h3> Senha Incorreta ou Não Cadastrada!</h3>
 
-    <a href="{{ url_for('login') }}"> Login</a>
+    <a href="{{ url_for('login') }}"> Fazer Login novamente!</a>
+    <a href="{{ url_for('register') }}"> Fazer Cadastro novo!</a>
     
 </body>
-</html>
+</html>                                                 

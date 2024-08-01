@@ -1,102 +1,83 @@
-from flask import Flask, render_template, url_for, request, make_response
-
-"""
-- adicionar mensagens
-- mensagens vinculadas por usuario
-- filtrar mensagem por usuario
-- utilizar cookies
-
-app.config['SECRET KEY'] = '123123'
-
-@app.route('/')
-def teste():
-    session['name'] = 'marcella'
-    return render_template('index.html')
-"""
+from flask import Flask, session, request, render_template,url_for, redirect
 
 app = Flask(__name__)
 
-# nosso 'banco de dados'    
-mensagens = {}  # variavel para guradar as info/requisições
-# as requisiçoes sao indepoenddertes uma das outras / o methpod http só tem informação do qu efoi pedido no momento, por isso é dificil manter infromações - surge os cookies (para manter informações)
+bancodados = {}
 
+# chave para critografia de cookies na sessão
+app.config['SECRET_KEY'] = 'superdificil'
 
-"""   UM DIXIONARIO COM CHAVE DOS USUARIOS E UMA LISTA COMO VALOR PARA GURADRA AS MENSAGENS
-{
-'romerito' ['a', 'b']
-'JV' ['C']
-
-}
-"""
 @app.route('/')
 def index():
     return render_template('index.html')
 
 
-@app.route('/mensagem')
-def mensagem():
-    return render_template('mensagem.html')
+@app.route('/dashboard')
+def dash():
 
+    if 'user' not in session:
+        return redirect(url_for('index'))
 
-@app.route('/mural', methods=['GET','POST'])
-def mural():
-    #processar o recebimento de novas mensagens
-    if request.method == 'POST':
-        #um usurario mandoi mensagem
-        name = request.form['name']
-        message = request.form['message']
+    return render_template('dashboard.html', nome=session['user']) # pega o valor salvo no cookie da sessão
 
+@app.route('/login', methods=['GET','POST'])
+def login():
+     # se tentar acessar o login já estando logado!
+    if 'user' in session:
+        return redirect(url_for('dash'))
 
-        if name in mensagens:
-            mensagens[name].append(message) # SE  EXISTIR UMA CHAVE COM ESSE USUARIO SALVO EU ADICIONO A MENSASSEGM NA LISTA REFERENTE A CHAVE DO USUARIO
-        
+    if request.method == 'GET':
+        return render_template('login.html')
+    else:
+        # fazer o login - POST - receber dados
+        nome = request.form['nome']
+        senha = request.form['senha']
+
+        # se os dados do login estão cadastrados o usuario pode ir para o dash
+        if nome in bancodados and bancodados[nome] == senha:
+            session['user'] = nome
+            return redirect(url_for('dash'))
+
         else:
-            mensagens[name] = [message]  # SE AINDA NÃO EXISTIR O USUARIO ELE CRIA UMA CHAVE COM O NOME E ADICIONA A MENSAGEM COMO LISTA = [MESSAGE]
-        
-        # lista mensagens sd eum usurario ativo 
-
-        if 'nome' in request.cookies and request.cookies['nome'] == name:  #se o nome estiver em cookie
-            return render_template('mural.html', lista=mensagens[name])
-        else:
-            template = render_template('mural.html', lista=mensagens[name])
-            response = make_response(template) 
-            response.set_cookie(key='nome', value=name)
-
-            return response
-
-    else: # se o method for get (o usuario deu f5 e iintrou em mural - o seite esta cadastrado com o cookie do ultimo usuario!)
-        lista = []
-        if 'nome' in request.cookies:
-            name = request.cookies['nome']
-            
-            if name in mensagens:
-                lista = mensagens[name]
-
-        return render_template('mural.html', lista=lista)
-
-
-
-
-
-"""
-from flask import Flask, session
-
-# sessoes são controladas pelo framework muita mais seguras e confiaveis, os dados (login e usuario / logout) são armazenados por um tempo predefinido
-# ao ativar uma sessão eu crio um 'cookie' que será gurdado pelo tempo determinado 
-# utilizado para proteger rotas
-
-app.config['SECRET KEY'] = 'seper dificil de encontrar'
-
-@app.route('/')
-def index():
-    session['user'] = 'romerito'
-    return 'oi sessão criada'
-
-@app.route('/jose')
-def jose():
-    if 'user' in session and session['user'] == 'jose':  # só posso utilizar a sessão se o nome definido no user da sessão for igual
-        return 'fala ze'
-    return redirect(url_for(index.html))  # o redirect pode ser utlizado para trafegar dados entre as paginas html / no caso ele está redirecionando  para a pagina index
+            # caso o login do usurairo não estiver cadastrado ou a senha do usurario que está cadastrado está erradpo! 
+            return render_template('erro_login.html')
     
 
-"""
+    return render_template('login.html')
+
+
+@app.route("/logout", methods=['POST'])
+def logout():
+    if 'user' in session:
+        session.pop('user', None)
+        return redirect(url_for('index'))
+
+
+
+
+@app.route('/register', methods=['GET','POST'])
+def register():
+    # se tentar acessar o cadastro já estando logado!
+    if 'user' in session:
+        return redirect(url_for('dash'))
+
+    # entrar na pagina de registro
+    if request.method == 'GET':
+        return render_template("register.html")
+
+    else:
+        # fazer o cadastro - POST - receber dados
+        nome = request.form['nome']
+        senha = request.form['senha']
+
+        if nome not in bancodados:
+            # se o usuario ainda não está cadastrada no dicionario/banco de dados
+            bancodados[nome] = senha
+        
+        else:
+            return redirect(url_for('login'))
+
+        # se o usuario está cadastrado significa que ele pode seguir para o dashboard
+        session['user'] = nome # vai inicializar uma sessão que guardará um cookie na pagina web - saivando como ususario cadastrado igual o ultimjo usuario salvo ! o user
+        return redirect(url_for('dash'))
+
