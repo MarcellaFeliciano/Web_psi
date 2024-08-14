@@ -1,0 +1,39 @@
+{% extends "layout/template.html" %}
+
+{% block pagetitle %}
+Dashboard
+{% endblock  %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="navbar">
+        <img class="navbar-logo" src="{{url_for('static', filename='img/Estuda5.png')}}" height="60px" alt="Logo">
+        <div class="menu">
+            <p class="user">Romerito</p>
+            <div class="dropdown-menu">                
+                <div class="dropdown-content">
+                    <a href="" class="dropdown-item">
+                        Perfil
+                    </a>
+                    <a href="" class="dropdown-item">
+                        Configurações
+                    </a>
+                    <a href="" class="dropdown-item">
+                        Sair
+                    </a>
+                </div>
+            </div>
+            <img src="{{url_for('static', filename='img/user.png')}}" width="32px" alt="avatar" class="avatar">
+        </div>
+    </div>
+    <div class="main">
+        <div class="pageheader">
+
+        </div>
+    </div>
+
+</div>
+
+{% endblock  %}
