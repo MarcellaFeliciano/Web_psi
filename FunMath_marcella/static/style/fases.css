@@ -1,0 +1,166 @@
+*{
+    border: 0;
+    margin: 0;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+.container{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+header{
+    display: flex;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    border-bottom: 1px solid rgb(124, 124, 124);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 12%;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 20%;
+}
+#logo1 img{
+    width: 80px;
+    height: 80px;
+    margin-left: 30px;
+}
+#logo2 img{
+    width: 180px;
+    height: 180px;
+    margin-top: -40px;
+}
+
+.botoes{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 40%;
+    height: 35px;
+    margin-left: 30%;
+    font-size: 18px;
+}
+
+.links{
+    text-decoration: none;
+    color: black;
+}
+#home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 100%;
+    margin: 10px;
+    cursor: pointer;
+    color: orange;
+}
+#home a:hover{
+    color: orange;
+}
+#jogos{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 100%;
+    margin: 10px;
+    cursor: pointer;
+}
+#jogos:hover{
+    color: orange;
+}
+#sobre{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 100%;
+    margin: 10px;
+    cursor: pointer;
+}
+#sobre:hover{
+    color: orange;
+}
+#ajuda{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 100%;
+    margin: 10px;
+    cursor: pointer;
+}
+#ajuda:hover{
+    color: orange;
+}
+#botao-login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90px;
+    height: 100%;
+    margin-left: 70px;
+    cursor: pointer;
+    background-color: orange;
+    color: white;
+}
+#botao-login:hover{
+    background-color: rgb(146, 145, 145);
+    color: white;
+}
+.perfil img{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    margin-left: 40px;
+}
+section{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    width: 100%;
+    height: 900px;
+    overflow-y: auto;
+    background-image: linear-gradient(rgb(255, 184, 51), rgb(255, 221, 158)) ;
+    padding: 15px;
+}
+.fases{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex-grow: 0.5;
+    width: 50%;
+    height: 40%;
+    margin-left: 25%;
+    margin-top: 5%;
+    justify-content: space-between;
+}
+.button_fases{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 20%;
+    height: 15%;
+    margin: 5%;
+    border-radius: none;
+    background-color: white;
+    border: black solid 1px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}

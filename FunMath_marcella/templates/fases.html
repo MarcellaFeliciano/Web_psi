@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicial quiz</title>
+    <link rel="stylesheet" href="static/style/fases.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div id="logo1">
+                    <img src="static/imgs/logo.png" alt="">
+                </div>
+                <div id="logo2">
+                    <img src="static/imgs/1.png" alt="">
+                </div>
+            </div>
+            <div class="botoes">
+                <button id="home"><a class="links" href="{{url_for('Index')}}">Home</a></button>
+                <button id="jogos">Jogos</button>
+                <button id="sobre">Sobre</button>
+                <button id="ajuda">Ajuda</button>
+                <button id="botao-login"><a class="links" href="{{url_for('Login')}}">Login</a></button>
+            </div>
+            <div class="perfil">
+                <img src="static/imgs/avatar-perfil.jpg" alt="">
+            </div>
+        </header>
+        <section>
+            <div class="fases">
+                <a class="button_fases" href="{{url_for('Quiz')}}">1</a>
+                <a class="button_fases" href="">2</a>
+                <a class="button_fases" href="">3</a>
+                <a class="button_fases" href="">4</a>
+                <a class="button_fases" href="">5</a>
+                <a class="button_fases" href="">6</a>
+                <a class="button_fases" href="">7</a>
+                <a class="button_fases" href="">8</a>
+                <a class="button_fases" href="">9</a>
+            </div>
+            
+        </section>
+        <footer></footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FunMath</title>
+
+    <link rel="stylesheet" href="static/style/base.css">
+
+    <link rel="stylesheet" href="static/style/inicial.css">
+    <link rel="stylesheet" href="static/style/login.css">
+    <link rel="stylesheet" href="static/style/inicial_quiz.css">
+
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <div id="logo1">
+                    <img src="static/imgs/logo.png" alt="">
+                </div>
+                <div id="logo2">
+                    <img src="static/imgs/1.png" alt="">
+                </div>
+            </div>
+            <nav class="botoes">
+                <div class="menu-icon"></div>
+                <div class="menu-items">
+                    <button id="home"><a class="links" href="{{url_for('Index')}}">Home</a></button>
+                    <button id="jogos">Jogos</button>
+                    <button id="sobre">Sobre</button>
+                    <button id="ajuda">Ajuda</button>
+                    <button id="botao-login"><a class="links" href="{{url_for('Login')}}">Login</a></button>
+                </div>
+            </nav>
+                
+            <div class="perfil">
+                <img src="static/imgs/avatar-perfil.jpg" alt="">
+            </div>
+        </header>
+
+
+        <!-- eu criei esse bloco = conteudo / que recebe o nome padrão de 'oi' 
+         mas que pode ser alterado nas outras paginas html que chama o bloco reservado!-->
+        {% block conteudo %}
+            <p>oi</p>
+        {% endblock %}
+
+
+    <script>
+        var header = document.querySelector('header');
+        const menuIcon = document.querySelector('.menu-icon');
+        const menuItems = document.querySelector('.menu-items');
+        var header_tam = '12%';
+        menuIcon.addEventListener('click', () => {
+          menuItems.classList.toggle('show');
+          
+          if (header_tam === '45%'){
+            header_tam = '12%';
+            header.style.height = header_tam
+          }
+          else{
+            header_tam = '45%';
+            header.style.height = header_tam
+          };
+        });
+    </script>
+</body>
+</html>

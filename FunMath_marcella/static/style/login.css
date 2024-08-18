@@ -1,0 +1,127 @@
+
+
+/* Modifiquei o nome do section para um id - section_login*/
+#section_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 88%;
+    background-image: linear-gradient(rgb(255, 184, 51), rgb(255, 221, 158)) ;
+    
+}
+.login-cadastro{
+    display: flex;
+    width: 70%;
+    height: 90%;
+    background-color: white;
+}
+#box1{
+    display: flex;
+    width: 50%;
+    height: 100%;
+    /*background-color: rgb(255, 223, 223);*/
+}
+#box2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    background-color: white;
+    font-family: arial;
+}
+.form{
+    height: 60%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+#login{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    font-family: Arial;
+    font-size: 15px;
+    width: 300px;
+    height: 200px;
+    margin-bottom: 150px;
+}
+
+input{
+    padding: 10px;
+    background-color: rgb(224, 223, 223);
+    color: gray;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    outline: none;
+}
+input::placeholder{
+    color: gray;
+}
+input[type="button"]{
+    background-color: rgb(253, 174, 26);
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+}
+#entrar:hover{
+    background-color: rgb(146, 145, 145);
+    color: white;
+}
+.lembrar{
+    display: flex;
+    position: relative;
+    bottom: 150px;
+    right: 98px;
+    font-family: arial;
+    font-size: 12px;
+}
+.cadastrar{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    bottom: 145px;
+    right: 2px;
+    font-family: arial;
+    font-size: 12px;
+}
+.cadastrar button{
+    background-color: white;
+    color: orange;
+    padding: 5px;
+    border-radius: 20px;
+    margin-left: 50px;
+    margin-top: -5px;
+    border: 1px solid orange;
+    cursor: pointer;
+}
+.conectar-login{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    font-family: arial;
+    width: 300px;
+    height: 60px;
+    bottom: 130px;
+}
+.conectar-login a{
+    display: flex;
+    width: 15px;
+    height: 20px;
+    margin: 15px;
+    padding-top: 3px;
+}
+.conectar-login img{
+    border-radius: 10px;
+}
+.conectar-login div{
+    display: flex;
+    flex-direction: row;
+}

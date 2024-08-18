@@ -1,0 +1,45 @@
+{% extends 'template_base.html' %}
+
+    {% block conteudo %}
+
+    <aside>
+        <!--<<div class="introducao">
+            
+        </div>-->
+    </aside>
+    <section id="section_login">
+        <div class="login-cadastro">
+            <div id="box1">
+                <img src="static/imgs/Mental.jpg" alt="">
+            </div>
+            <div id="box2">
+                <h1>Login</h1>
+                <div class="form">
+                    <form id="login">
+                        <input type="email" id="emailId" placeholder="Email ou número de telefone">
+                        <input type="password" id="senhaId" placeholder="Senha">
+                        <input id="entrar" type="button" value="Entrar">
+                    </form>
+                    <div class="lembrar">
+                        <input type="checkbox" id="checkId">
+                        <label for="checkId">Lembrar senha</label>
+                    </div>
+                    <div class="cadastrar">
+                        <h4>Ainda não tem uma conta?</h4>
+                        <button>Cadastre-se</button>
+                    </div>
+                    <div class="conectar-login">
+                        <h5 style="color: rgb(94, 92, 92); ">Entrar com:</h5>
+                        <div>
+                            <a href="https://accounts.google.com"><img src="static/imgs/google.png"></a>
+                            <a href="https://pt-br.facebook.com/"><img src="static/imgs/facebook.png"></a>
+                            <a href="https://www.instagram.com/?hl=en"><img src="static/imgs/Instagram.webp"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+    {% endblock %}
