@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block link %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+{% endblock %}
+
+{% block conteudo %}
+
+<div class="users">
+    <ul>
+        {% for user in users %}
+        <li>
+            <span>Email:</span> 
+            {{user['email']}} 
+            <a href="{{url_for('edit', id=user['id'])}}">
+                <span class="material-symbols-outlined">edit_document</span>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

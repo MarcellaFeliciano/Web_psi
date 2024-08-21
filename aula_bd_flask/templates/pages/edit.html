@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block conteudo %}
+<div class="users">
+
+    <form action="{{url_for('edit', id=user['id'])}}" method="post">
+        <input type="email" name="email" placeholder="Email" value="{{user['email']}}">
+        <button>Enviar</button>
+    </form>
+
+</div>
+{% endblock %}
