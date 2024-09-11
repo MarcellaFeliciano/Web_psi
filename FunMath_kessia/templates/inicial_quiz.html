@@ -1,0 +1,34 @@
+{% extends 'template_base.html' %}
+    {% block style %}
+    <link rel="stylesheet" href="static/style/inicial_quiz.css">
+    {% endblock %}
+
+    {% block conteudo %}
+  
+        <section id="section_inicial_quiz">
+            <div>
+                <div class="box">
+                    <div id="div_quiz">
+                        <h1 id="titulo-jogo">QUIZ MATEMÁTICO</h1>
+                    </div>
+                    <div id="quad1">
+                        <div id="play-jogo">
+                            <a id="jogar" href="{{url_for('Fases_quiz')}}"></a>
+                        </div>
+                    </div>
+                    <div id="quad2">
+                        <div class="descricao">
+                            <div>
+                                <h4 id="desc_text">Responda corretamente o máximo de questões que conseguir para ganhar pontos.</h4>
+                                <ul>
+                                    <li><p>Cuidado com o tempo; Este jogo terá um cronometro marcando o seu tempo em cada questão.</p></li>
+                                    <li><p>Avalie seu conhecimento.</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </section>
+    </div>
+    {% endblock %}

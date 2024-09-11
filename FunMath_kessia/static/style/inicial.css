@@ -1,0 +1,304 @@
+/* PAGINA INICIAL */
+
+/* Estiliza o elemento aside */
+aside {
+    display: flex;              /* Define o layout do aside como flexbox */
+    background-color: skyblue; /* Define a cor de fundo do aside como azul claro */
+    color: white;              /* Define a cor do texto dentro do aside como branca */
+    flex-direction: row;        /* Organiza os itens do aside em uma linha */
+    width: 100%;                /* Define a largura do aside como 100% da largura da viewport */
+    height: 30%;                /* Define a altura do aside como 30% da altura da viewport */
+}
+
+/* Estiliza a seção de introdução */
+.introducao {
+    display: flex;              /* Define o layout da introdução como flexbox */
+    flex-direction: column;     /* Organiza os itens da introdução em uma coluna */
+    width: 30%;                 /* Define a largura da introdução como 30% da largura do aside */
+    height: 80%;                /* Define a altura da introdução como 80% da altura do aside */
+    margin-left: 30px;          /* Adiciona uma margem esquerda à introdução */
+}
+
+/* Estiliza o título dentro da introdução */
+.introducao h1 {
+    margin: 10px;               /* Adiciona uma margem ao redor do título */
+}
+
+/* Estiliza a seção principal */
+#section_inicial {
+    display: flex;              /* Define o layout da seção como flexbox */
+    flex-direction: column;     /* Organiza os itens da seção em uma coluna */
+    align-items: center;        /* Alinha os itens da seção ao centro horizontalmente */
+    width: 100%;                /* Define a largura da seção como 100% da largura da viewport */
+    height: 50%;                /* Define a altura da seção como 50% da altura da viewport */
+}
+
+
+/* Estiliza a área de jogos */
+.jogos {
+    display: flex;              /* Define o layout da área de jogos como flexbox */
+    flex-direction: row;        /* Organiza os itens da área de jogos em uma linha */
+    align-items: center;        /* Alinha os itens da área de jogos verticalmente ao centro */
+    justify-content: center;    /* Centraliza os itens da área de jogos horizontalmente */
+    width: 100%;                /* Define a largura da área de jogos como 100% da largura da viewport */
+    height: 100%;               /* Define a altura da área de jogos como 100% da altura da viewport */
+    padding: 10px;             /* Adiciona padding ao redor do conteúdo da área de jogos */
+    border-top: 1px solid rgb(124, 124, 124); /* Adiciona uma borda superior cinza à área de jogos */
+}
+
+/* Estiliza o texto dentro da área de jogos */
+.jogos h4 {
+    font-family: Georgia, 'Times New Roman', Times, serif; /* Define a fonte do texto */
+    margin-left: 30px;          /* Adiciona uma margem esquerda ao texto */
+    margin-top: 10px;           /* Adiciona uma margem superior ao texto */
+    color: black;               /* Define a cor do texto como preto */
+}
+
+/* Estiliza a seção do trilha */
+#trilha {
+    display: flex;              /* Define o layout do trilha como flexbox */
+    flex-direction: column;     /* Organiza os itens do trilha em uma coluna */
+    align-items: center;        /* Alinha os itens do trilha ao centro horizontalmente */
+    color: orange;              /* Define a cor do texto do trilha como laranja */
+    width: 25%;                 /* Define a largura do trilha como 25% da largura do contêiner pai */
+    height: 100%;               /* Define a altura do trilha como 100% da altura do contêiner pai */
+    margin: 20px;               /* Adiciona uma margem ao redor do trilha */
+}
+
+/* Estiliza as imagens dentro da seção trilha */
+#trilha img {
+    width: 170px;               /* Define a largura da imagem do trilha */
+    height: 170px;              /* Define a altura da imagem do trilha */
+    margin-top: 5px;            /* Adiciona uma margem superior à imagem */
+}
+
+/* Estiliza a seção do quebra-cabeça */
+#quebra-cabeca {
+    display: flex;              /* Define o layout do quebra-cabeça como flexbox */
+    flex-direction: column;     /* Organiza os itens do quebra-cabeça em uma coluna */
+    align-items: center;        /* Alinha os itens do quebra-cabeça ao centro horizontalmente */
+    color: orange;              /* Define a cor do texto do quebra-cabeça como laranja */
+    width: 25%;                 /* Define a largura do quebra-cabeça como 25% da largura do contêiner pai */
+    height: 100%;               /* Define a altura do quebra-cabeça como 100% da altura do contêiner pai */
+    margin: 20px;               /* Adiciona uma margem ao redor do quebra-cabeça */
+}
+
+/* Estiliza as imagens dentro da seção quebra-cabeça */
+#quebra-cabeca img {
+    width: 170px;               /* Define a largura da imagem do quebra-cabeça */
+    height: 170px;              /* Define a altura da imagem do quebra-cabeça */
+    margin-top: 5px;            /* Adiciona uma margem superior à imagem */
+}
+
+/* Estiliza a seção do quiz */
+#quiz {
+    display: flex;              /* Define o layout do quiz como flexbox */
+    flex-direction: column;     /* Organiza os itens do quiz em uma coluna */
+    align-items: center;        /* Alinha os itens do quiz ao centro horizontalmente */
+    color: orange;              /* Define a cor do texto do quiz como laranja */
+    width: 25%;                 /* Define a largura do quiz como 25% da largura do contêiner pai */
+    height: 100%;               /* Define a altura do quiz como 100% da altura do contêiner pai */
+    margin: 20px;               /* Adiciona uma margem ao redor do quiz */
+}
+
+/* Estiliza as imagens dentro da seção quiz */
+#quiz img {
+    width: 170px;               /* Define a largura da imagem do quiz */
+    height: 170px;              /* Define a altura da imagem do quiz */
+    margin-top: 5px;            /* Adiciona uma margem superior à imagem */
+}
+
+/* Estiliza o rodapé da página */
+footer {
+    display: flex;              /* Define o layout do rodapé como flexbox */
+    flex-direction: row;        /* Organiza os itens do rodapé em uma linha */
+    border-top: 1px solid rgb(124, 124, 124); /* Adiciona uma borda superior cinza ao rodapé */
+    width: 100%;                /* Define a largura do rodapé como 100% da largura da viewport */
+    height: 10%;                /* Define a altura do rodapé como 10% da altura da viewport */
+}
+
+/* Estiliza a seção de botões dentro do rodapé */
+.botoes {
+    display: flex;              /* Define o layout dos botões como flexbox */
+    flex-direction: row-reverse; /* Organiza os botões em uma linha reversa (direita para esquerda) */
+    align-items: center;        /* Alinha os itens dos botões verticalmente ao centro */
+    width: 50%;                 /* Define a largura da seção de botões como 50% da largura do rodapé */
+    height: 50px;               /* Define a altura da seção de botões como 50 pixels */
+    margin-left: 20%;           /* Adiciona uma margem esquerda à seção de botões */
+    font-size: 18px;            /* Define o tamanho da fonte dos botões */
+    padding: 1rem;             /* Adiciona padding ao redor do conteúdo da seção de botões */
+}
+
+/* Estiliza os itens do menu dentro do rodapé */
+.menu-items {
+    display: flex;              /* Define o layout dos itens do menu como flexbox */
+    flex-direction: row;        /* Organiza os itens do menu em uma linha */
+    align-items: center;        /* Alinha os itens do menu verticalmente ao centro */
+    justify-content: space-between; /* Distribui os itens do menu com espaço entre eles */
+    width: 100%;                /* Define a largura dos itens do menu como 100% da largura do rodapé */
+    height: 40px;               /* Define a altura dos itens do menu como 40 pixels */
+    font-size: 18px;            /* Define o tamanho da fonte dos itens do menu */
+}
+
+/* responsivo para tablet*/
+@media (max-width: 810px) {
+    header{
+        height: 12%;
+    }
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav .menu-items {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+    .menu-items button{
+        height: 5px;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-icon::before {
+        content: "\2630";
+        font-size: 1.5rem;
+    }
+
+    .menu-items {
+        display: none;
+    }
+
+    .menu-items.show {
+        display: flex;
+        position: absolute;
+        margin-right: 20px;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    aside{
+        height: 10%;
+    }
+    section{
+        height: 70%;
+    }
+    .jogos{
+        align-items: flex-start;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-around;
+
+    }
+    #trilha{
+        justify-content: space-between;
+        width: 100%;
+        height: 40%;
+    }
+    
+    #quebra-cabeca{
+        justify-content: space-between;
+        width: 100%;
+        height: 40%;
+    }
+    #quiz{
+        justify-content: space-between;
+        width: 100%;
+        height: 40%;
+    }
+}
+/* responsivo para celular*/
+@media (max-width: 400px) {
+    #logo2{
+        display: none;
+    }
+    header{
+        justify-content: space-around;
+        height: 10%;
+    }
+    nav {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    nav .menu-items {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+    .menu-items button{
+        height: 5px;
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-icon::before {
+        content: "\2630";
+        font-size: 1.5rem;
+    }
+
+    .menu-items {
+        display: none;
+    }
+
+    .menu-items.show {
+        display: flex;
+        position: absolute;
+        margin-right: 20px;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    aside{
+        height: 10%;
+    }
+    section{
+        height: 75%;
+    }
+    .jogos{
+        margin: 0px;
+        padding: 0px;
+        align-items: flex-start;
+        flex-direction: column;
+        height: 100%;
+        justify-content: space-around;
+
+    }
+    #trilha{
+        width: 100%;
+        height: 20%;
+    }
+    #trilha img{
+        width: 100px;
+        height: 100px;
+    }
+    #quebra-cabeca{
+        width: 100%;
+        height: 20%;
+    }
+    #quebra-cabeca img{
+        width: 100px;
+        height: 100px;
+    }
+    #quiz{
+        width: 100%;
+        height: 20%;
+    }
+    #quiz img{
+        width: 100px;
+        height: 100px;
+    }
+    .jogos h2{
+        font-size: 20px;
+    }
+    .jogos h4{
+        font-size: 10px;
+        margin-bottom: 1px;
+    }
+    footer{
+        height: 3%;
+    }
+}

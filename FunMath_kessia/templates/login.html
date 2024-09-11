@@ -1,0 +1,54 @@
+{% extends 'template_base.html' %}
+
+    {% block style %}
+    <link rel="stylesheet" href="static/style/login.css">
+    {% endblock %}
+
+    {% block conteudo %}
+        <!--<aside>
+            <div class="introducao">
+                
+            </div>
+        </aside>-->
+        <section id="section_login">
+            <div class="login-cadastro">
+                <div id="box1">
+                    <img src="static/imgs/Mental.jpg" alt="">
+                </div>
+                <div id="box2">
+                    <h1>Login</h1>
+                    <div class="form">
+                        <form id="login" action="{{url_for('Login')}}" method="post">
+                            <input type="email" name="email" id="emailId" placeholder="Email ou número de telefone">
+                            <input type="password" name="senha" id="senhaId" placeholder="Senha">
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    <p>{{messages[0]}}</p>
+                                {% endif %}
+                            {% endwith %}
+                            <input id="entrar" type="submit" value="Entrar">
+                        </form>
+                        <div class="lembrar">
+                            <input type="checkbox" id="checkId">
+                            <label for="checkId">Lembrar senha</label>
+                        </div>
+                        <div class="cadastrar">
+                            <h4>Ainda não tem uma conta?</h4>
+                            <a id="link-cadastro" href="{{url_for('Cadastro')}}">Cadastre-se</a>
+                        </div>
+                        <div class="conectar-login">
+                            <h5 style="color: rgb(94, 92, 92); ">Entrar com:</h5>
+                            <div>
+                                <a href="https://accounts.google.com"><img src="static/imgs/google.png"></a>
+                                <a href="https://pt-br.facebook.com/"><img src="static/imgs/facebook.png"></a>
+                                <a href="https://www.instagram.com/?hl=en"><img src="static/imgs/Instagram.webp"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+        </footer>
+    </div>
+{% endblock %}

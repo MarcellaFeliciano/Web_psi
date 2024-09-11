@@ -1,0 +1,62 @@
+{% extends 'template_base.html' %}
+
+    {% block style %}
+    <link rel="stylesheet" href="static/style/jogo_quiz.css">
+    {% endblock %}
+
+    {% block conteudo %}
+        <!-- Seção principal do conteúdo -->
+        <section id="section_quiz">
+            <div>
+                <!-- Caixa principal de conteúdo -->
+                <div class="box">
+                    <!-- Div para o quiz -->
+                    <div id="div_quiz">
+                        <h1 id="titulo-jogo">QUIZ MATEMÁTICO</h1> <!-- Título do quiz -->
+                    </div>
+                    <!-- Primeira caixa de conteúdo do quiz -->
+                    <div id="bloco1">
+                        <p><span id="Tempo_restante"></span></p> <!-- Espaço para exibir o tempo restante -->
+                        <p id="pergunta">{{ pergunta }}</p> <!-- Pergunta do quiz -->
+                        <!-- Contêiner para as opções de resposta -->
+                        <div class="questao">
+                            <form method="post" action="{{url_for('Quiz')}}">
+                                <!-- Laço para criar botões de resposta para cada opção -->
+                                {% for opcao in opcoes %}
+                                <input class="inputs" type="submit" name="resposta" value="{{ opcao }}" id=""> <!-- Botão de opção -->
+                                {% endfor %}
+                            </form>
+                        </div>
+                        <!-- Div para exibir mensagens relacionadas à resposta -->
+                        <div id="resposta">
+                            {% if mensagem %}
+                            <p>{{ mensagem }}</p> <!-- Mensagem exibida -->
+                            {% endif %}
+                        </div>
+                    </div>
+                    <!-- Segunda caixa de conteúdo com informações adicionais -->
+                    <div id="bloco2">
+                        <div class="descricao">
+                            <div>
+                                <h4 id="desc_text">Responda corretamente o máximo de questões que conseguir para ganhar pontos.</h4> <!-- Texto de descrição -->
+                                <ul>
+                                    <!-- Lista de instruções e dicas -->
+                                    <li><p>Cuidado com o tempo; Este jogo terá um cronometro marcando o seu tempo em cada questão.</p></li>
+                                    <li><p>Avalie seu conhecimento.</p></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </section>
+    </div>
+    {% endblock %}
+
+    {% block js %}
+    <!-- Script para atualizar o tempo restante -->
+    <script src="static/scripts/jogo_quiz.js">
+
+    </script>
+    
+    {% endblock %}

@@ -1,0 +1,88 @@
+{% extends 'template_base.html' %}
+
+    {% block style %}
+    <link rel="stylesheet" href="static/style/questoes_qcbc.css">
+    {% endblock %}
+
+    {% block conteudo %}
+        <!-- Seção principal do conteúdo -->
+    <section id="section_quebra_cbc">
+        <div>
+            <!-- Caixa principal de conteúdo -->
+            <div class="box">
+                <!-- Div para o quiz -->
+                <div id="div_quebra_cbc">
+                    <h1 id="titulo-jogo">QUEBRA-CABEÇA</h1> <!-- Título do quiz -->
+                </div>
+                <!-- Primeira caixa de conteúdo do quiz -->
+                <div id="quad1">
+
+                   <p id="pergunta">{{ pergunta }}</p> <!-- Pergunta do quiz -->
+                        <!-- Contêiner para as opções de resposta -->
+                    <div class="questao">
+                        <form method="post" action="{{url_for('Questoes_qcbc')}}">
+                            <!-- Laço para criar botões de resposta para cada opção -->
+                            {% for opcao in opcoes %}
+                            <input class="inputs" type="submit" name="resposta" value="{{ opcao }}" id=""> <!-- Botão de opção -->
+                            {% endfor %}
+                        </form>
+                    </div>
+                    <!-- Div para exibir mensagens relacionadas à resposta -->
+                    <div id="resposta">
+                        {% if mensagem %}
+                        <p>{{ mensagem }}</p> <!-- Mensagem exibida -->
+                        {% endif %}
+                    </div>
+                    
+                </div>
+                <div id="quad2">
+                    <div class="descricao">
+                        <div>
+                            <h4 id="desc_text">Resolva problemas matemáticos para montar o quebra-cabeça.</h4>
+                            <ul>
+                                <li><p>Responda corretamente as questões para desbloquear cada peça do quebra-cabeça.</p></li>
+                                <li><p>você ganhará pontos por cada quebra-cabeça montado.</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>
+</div>
+    {% endblock %}
+
+
+    {% block js %}
+
+    
+        <script>
+
+            let num= document.querySelectorAll('.inputs').length
+            document.querySelectorAll('.inputs').forEach((input, index)=>{
+                input.id=`input-${index + 1}`;
+            });
+
+            
+            // Seleciona o elemento do cabeçalho
+            var header = document.querySelector('header');
+            // Seleciona o ícone do menu e os itens do menu
+            const menuIcon = document.querySelector('.menu-icon');
+            const menuItems = document.querySelector('.menu-items');
+            // Define a altura inicial do cabeçalho
+            var header_tam = '12%';
+            // Adiciona um ouvinte de evento ao ícone do menu para alternar a visibilidade dos itens do menu
+            menuIcon.addEventListener('click', () => {
+                // Alterna a classe 'show' nos itens do menu para mostrar ou ocultar
+                menuItems.classList.toggle('show');
+                // Altera a altura do cabeçalho entre 12% e 45% com base no estado atual
+                if (header_tam === '45%'){
+                    header_tam = '12%'; // Define a altura de volta para 12%
+                    header.style.height = header_tam;
+                } else {
+                    header_tam = '45%'; // Expande a altura para 45%
+                    header.style.height = header_tam;
+                }
+            });
+        </script>
+        {% endblock%}

@@ -1,0 +1,104 @@
+/* Define um estilo base para todos os elementos, removendo bordas e margens, e ajustando o box-sizing para border-box */
+* {
+    border: 0;              /* Remove a borda padrão de todos os elementos */
+    margin: 0;              /* Remove a margem padrão de todos os elementos */
+    box-sizing: border-box; /* Inclui padding e bordas na largura e altura dos elementos */
+}
+
+/* Estiliza o corpo da página, centralizando seu conteúdo */
+body {
+    display: flex;              /* Define o layout do corpo como flexbox */
+    justify-content: center;    /* Centraliza o conteúdo horizontalmente */
+    align-items: center;        /* Centraliza o conteúdo verticalmente */
+    height: 100vh;              /* Define a altura do corpo como 100% da altura da viewport */
+    width: 100%;                /* Define a largura do corpo como 100% da largura da viewport */
+}
+
+/* Estiliza o contêiner principal que ocupa toda a tela */
+.container {
+    display: flex;              /* Define o layout do contêiner como flexbox */
+    position: fixed;            /* Fixa o contêiner na posição da tela */
+    flex-direction: column;     /* Organiza os itens do contêiner em uma coluna */
+    width: 100%;                /* Define a largura do contêiner como 100% da largura da viewport */
+    height: 100%;               /* Define a altura do contêiner como 100% da altura da viewport */
+}
+
+/* Estiliza o cabeçalho da página */
+header {
+    display: flex;              /* Define o layout do cabeçalho como flexbox */
+    flex-direction: row;        /* Organiza os itens do cabeçalho em uma linha */
+    align-items: center;        /* Alinha os itens do cabeçalho verticalmente ao centro */
+    background-color: white;    /* Define a cor de fundo do cabeçalho como branca */
+    border-bottom: 1px solid rgb(124, 124, 124); /* Adiciona uma borda inferior cinza ao cabeçalho */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte dos textos no cabeçalho */
+    width: 100%;                /* Define a largura do cabeçalho como 100% da largura da viewport */
+    height: 12%;                /* Define a altura do cabeçalho como 12% da altura da viewport */
+}
+
+/* Estiliza a área para os logotipos dentro do cabeçalho */
+.logo {
+    display: flex;              /* Define o layout da área dos logotipos como flexbox */
+    flex-direction: row;        /* Organiza os logotipos em uma linha */
+    height: 100%;               /* Define a altura da área dos logotipos como 100% da altura do cabeçalho */
+    width: 20%;                 /* Define a largura da área dos logotipos como 20% da largura do cabeçalho */
+}
+
+/* Estiliza o primeiro logotipo */
+#logo1 img {
+    width: 110px;               /* Define a largura do primeiro logotipo */
+    height: 100px;              /* Define a altura do primeiro logotipo */
+    margin-left: 20px;          /* Adiciona uma margem esquerda ao logotipo */
+    margin-top: -15px;          /* Adiciona uma margem superior negativa ao logotipo */
+}
+
+/* Estiliza o segundo logotipo */
+#logo2 img {
+    width: 180px;               /* Define a largura do segundo logotipo */
+    height: 180px;              /* Define a altura do segundo logotipo */
+    margin-top: -40px;          /* Adiciona uma margem superior negativa ao logotipo */
+    margin-left: -15px;         /* Adiciona uma margem esquerda negativa ao logotipo */
+}
+
+/* Estilo dos links de navegação */
+.links {
+    text-decoration: none;           /* Remove a decoração de texto (sublinhado) dos links */
+    color: black;                    /* Define a cor do texto dos links como preto */
+}
+
+/* Estilo dos itens de navegação */
+#home, #jogos, #sobre, #ajuda {
+    display: flex;                    /* Define o layout dos itens de navegação como flexbox */
+    align-items: center;             /* Alinha os itens verticalmente ao centro */
+    justify-content: center;         /* Centraliza os itens horizontalmente */
+    width: 90px;                     /* Define a largura dos itens de navegação */
+    height: 100%;                    /* Define a altura dos itens de navegação como 100% da altura do cabeçalho */
+    cursor: pointer;                /* Define o cursor como ponteiro ao passar sobre os itens */
+}
+
+/* Estilo dos itens de navegação com hover */
+.links:hover {
+    color: orange;                   /* Muda a cor do texto para laranja ao passar o mouse */
+}
+/* Estiliza o botão de login */
+#botao-login {
+    display: flex;              /* Define o layout do botão como flexbox */
+    align-items: center;        /* Alinha o conteúdo do botão verticalmente ao centro */
+    justify-content: center;    /* Centraliza o conteúdo do botão horizontalmente */
+    width: 90px;                /* Define a largura do botão como 90 pixels */
+    height: 100%;               /* Define a altura do botão como 100% da altura do cabeçalho */
+    cursor: pointer;            /* Define o cursor como ponteiro quando sobre o botão */
+    background-color: orange;   /* Define a cor de fundo do botão como laranja */
+    color: white;               /* Define a cor do texto do botão como branca */
+}
+
+/* Estiliza o efeito de hover no botão de login */
+#botao-login:hover {
+    background-color: rgb(51, 50, 50); /* Altera a cor de fundo para um cinza claro quando sobreposto */
+}
+
+/* Estiliza as imagens de perfil */
+.perfil img {
+    width: 40px;                /* Define a largura da imagem do perfil */
+    height: 40px;               /* Define a altura da imagem do perfil */
+    border-radius: 20px;        /* Arredonda as bordas da imagem para criar um formato circular */
+}
