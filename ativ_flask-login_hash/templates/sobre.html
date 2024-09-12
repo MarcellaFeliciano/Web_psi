@@ -1,0 +1,22 @@
+{% extends 'template_base.html' %}
+
+    {% block style %}
+    <link rel="stylesheet" href="../static/sobre.css">
+    {% endblock %}
+
+    {% block content %}
+
+    <section>
+        <div class="users">
+            <ul>
+                {% for user in users %}
+                <li>
+                    <span>Email:</span> 
+                    {{ user['email'] }} 
+                </li>   
+                {% endfor %}
+                
+            </ul>
+        </div>
+    </section>
+    {% endblock %}

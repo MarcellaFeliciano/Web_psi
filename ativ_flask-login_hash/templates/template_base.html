@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade PSI</title>
+
+    <link rel="stylesheet" href="/static/base.css">
+
+    {% block style %}
+    {% endblock %}
+
+</head>
+<body>
+    <header>
+        <div>
+            <span><h1>Atividade de PSI</h1></span>
+            <span>Marcella</span>
+        </div>
+        <nav>
+            <button id="home"><a class="links" href="{{url_for('index')}}">Home</a></button>
+            <button id="bt_dash"><a class="links" href="{{url_for('dash')}}">Dashboard</a></button>
+            <button id="bt_sobre"><a class="links" href="{{url_for('sobre')}}">About</a></button>
+            <button id="bt_login"><a class="links" href="{{url_for('login')}}">Login</a></button>
+            <button id="bt_logout"><a class="links" href="{{url_for('logout')}}">Logout</a></button>
+        </nav>
+
+    </header>
+    <main>
+        {% block content %}
+        
+        {% endblock %}
+    </main>
+    <footer>
+        @2024
+        <a href="https://github.com/MarcellaFeliciano/Web_psi/">Link author GitHub: Marcella</a>
+    </footer>
+    
+</body>
+</html>

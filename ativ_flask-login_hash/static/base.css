@@ -1,0 +1,145 @@
+*{
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+   
+}
+body{
+    background-color: whitesmoke;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    align-items:center;
+    justify-content: space-around;
+    background-color: white;
+    border-bottom: 1px solid rgb(124, 124, 124);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 12%;
+}
+
+header div {
+    color:palevioletred;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+
+}
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+}
+
+nav button {
+    background-color: palevioletred;
+    padding: 5px;
+    border-radius: 10px;
+    width: 100px;
+    height: 30px;
+    border: 1px solid black;
+    text-decoration: none;
+    color: white;
+    font-size: medium;
+
+
+}
+.links {
+    text-decoration: none;
+    color: white;
+    
+}
+#bt_login, #bt_logout{
+    border-radius: 70px;
+    width: 90px;
+    
+}
+
+
+footer {
+    width: 100%;
+    height: 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    
+
+}
+
+main {
+    width: 100%;
+    height: 80%;
+    background-color: beige;
+    display: flex;
+    flex-direction: row;
+
+
+}
+
+aside {
+    width: 20%;
+    height:100%;
+    background-color: palevioletred;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:first baseline;
+    gap:40px;
+    padding-top: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+}
+aside h4 {
+    padding-left: 20px;
+
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+section {
+    width: 80%;
+    height:100%;
+    background-color:beige;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.cadastrar {
+    width: 65%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:center;
+    padding: 50px;
+    gap: 25px;
+}
+.cadastrar button {
+    width: 120px;
+    height: 50px;
+    background-color: palevioletred;
+    font-size: medium;
+    
+}
+

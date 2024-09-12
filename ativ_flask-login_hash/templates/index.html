@@ -1,0 +1,43 @@
+{% extends 'template_base.html' %}
+    {% block style %}
+        <link rel="stylesheet" href="/static/index.css">
+    {% endblock %}
+
+    {% block content %}
+
+    <aside>
+        <h4>
+            Aprendendo a utilizar Flask
+        </h4>
+        <ul>
+            <li>Request Post/Get</li>
+            <li>Cookies</li>
+            <li>Sessions</li>
+            <li>Extends Templates</li>
+            <li>Banco de Dados</li>
+        </ul>
+    </aside>
+    <section>
+
+        <div class="cadastrar">
+            <h3>Portal de Aprendizagem</h3>
+            <p>
+                O Portal de Aprendizagem é parceiro de instituições acadêmicas em todo o mundo para oferecer à próxima geração de talentos de TI acesso gratuito a vários exames de certificação e treinamentos em HTML, CSS, JS, PYTHON  e outras tecnologias.
+            </p>
+            <!--
+            <form action="{{ url_for('cadastro') }}" method='GET'>
+                <input type="submit" value="Inscreva-se">
+            </form>
+            -->
+            
+            <button><a href="{{ url_for('cadastro') }}">Inscreva-se</a></button>
+            
+        </div>
+        <div>
+           
+
+        </div>
+
+    </section>
+
+    {% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'template_base.html' %}
+    {% block style %}
+        <link rel="stylesheet" href="/static/dashboard.css">
+    {% endblock %}
+
+    {% block content %}
+
+    <aside>
+        <h4>
+            Aprendendo a utilizar Flask
+        </h4>
+        <ul>
+            <li>Request Post/Get</li>
+            <li>Cookies</li>
+            <li>Sessions</li>
+            <li>Extends Templates</li>
+            <li>Banco de Dados</li>
+        </ul>
+    </aside>
+    <section>
+
+        <div class="user">
+            <h2>Bem vindo(a) {{ nome }}! </h2>
+        </div>
+        <div>
+            <h3>Informações do seu cadastro:</h3>
+            <br>
+            <ul>
+                <li>Usuário: {{ usuario }}</li>
+                <li>Senha: {{ senha }}</li>
+            </ul>
+            
+
+        </div>
+
+    </section>
+
+
+    {% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'template_base.html' %}
+
+    {% block style %}
+        <link rel="stylesheet" href="/static/cadastro.css">
+    {% endblock %}
+
+    {% block content %}
+        <section>
+
+            <form action="{{ url_for('cadastro') }}" method="post">
+                <h2>Fazer Cadastro</h2>
+                <label>Digite o nome: </label>
+                <input type="text" name="nome" placeholder="Nome:">
+                <label>Digite o usuário: </label>
+                <input type="email" name="usuario" placeholder="Usuário:">
+                <label>Digite a senha: </label>
+                <input type="password" name="senha" placeholder="Senha:">
+                <input type="submit" value="Enviar" id="bt_cadastrar">
+            </form>
+        </section>
+    {% endblock %}

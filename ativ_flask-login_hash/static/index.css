@@ -1,0 +1,60 @@
+
+aside {
+    width: 20%;
+    height:100%;
+    background-color: palevioletred;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items:first baseline;
+    gap:40px;
+    padding-top: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+}
+aside h4 {
+    padding-left: 20px;
+
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+section {
+    width: 80%;
+    height:100%;
+    background-color:whitesmoke;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.cadastrar {
+    width: 65%;
+    height: 100%;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content:center;
+    padding: 50px;
+    gap: 25px;
+}
+
+.cadastrar button {
+    width: 120px;
+    height: 50px;
+    background-color: palevioletred;
+    
+}
+.cadastrar button a {
+    text-decoration: none;
+    font-size: medium;
+    color: white
+}

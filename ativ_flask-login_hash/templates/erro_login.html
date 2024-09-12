@@ -1,0 +1,17 @@
+{% extends 'template_base.html' %}
+
+    {% block style %}
+    <link rel="stylesheet" href="../static/erro_login.css">
+    {% endblock %}
+
+    {% block content %}
+        <section>
+            <h1>Erro em fazer o login! </h1>
+            <h3> Senha Incorreta ou Não Cadastrada!</h3>
+
+            <a href="{{ url_for('login') }}"> Fazer Login novamente!</a>
+            <a href="{{ url_for('cadastro') }}"> Fazer Cadastro novo!</a>
+            
+        </section>
+
+    {% endblock %}
