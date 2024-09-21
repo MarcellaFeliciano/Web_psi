@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block navbar %}
+<h2><a href="{{url_for('index')}}">Home</a></h2>
+<h2><a href="{{url_for('create')}}">Add Users</a></h2>
+<h2>Listar Users</h2>
+{% endblock %}
+
+{% block conteudo %}
+
+<ul>
+    {% for user in users %}
+    <li>Nome: {{user['nome']}} </li>
+    {% endfor %}
+</ul>
+    
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block navbar %}
+<h2><a href="{{url_for('index')}}">Home</a></h2>
+<h2><a href="{{url_for('create')}}">Add Users</a></h2>
+<h2><a href="{{url_for('listar')}}">List Users</a></h2>
+{% endblock %}
+
+{% block conteudo %}
+<form action="{{url_for('create')}}" method="POST">
+    <label for="name">
+        Nome
+    </label>
+    <input type="name" name="nome" placeholder="Digite seu nome">
+    <button>Enviar</button>
+</form>
+{% endblock %}
