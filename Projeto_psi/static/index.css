@@ -1,0 +1,24 @@
+.box{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 60%;
+    padding: 10px;
+}
+
+#quadrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    width: 40%;
+    height: 90%;
+    background-color: yellowgreen;
+    border: 1px solid black;
+    margin: 10px;
+    padding-bottom: 30px;
+}
+
+a {
+    text-decoration: none;
+}

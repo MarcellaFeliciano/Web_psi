@@ -1,0 +1,23 @@
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    width: 90%;
+    height: 80%;
+    padding-top: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+}
+input{
+    height: 30px;
+}
+a{
+    text-decoration: none;
+}
