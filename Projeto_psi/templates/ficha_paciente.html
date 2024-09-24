@@ -1,0 +1,30 @@
+{% extends 'template_base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="static/ficha.css">
+{% endblock %}
+
+{% block conteudo %}
+        <div class="box">
+            <h2>FICHA DO PACIENTE</h2>
+            <br>
+            <h2 id="h2_info">informações pessoais</h2>
+            <form action="{{ url_for('ficha') }}" method="post">
+                <input type="text" name="nome" placeholder="nome">
+                <input type="text" name="data_nascimento" placeholder="data de nascimento">
+                <input type="text" name="genero" placeholder="genero">
+                <input type="text" name="endereco" placeholder="endereco">
+                <input type="text" name="telefone" placeholder="telefone">
+                <input type="text" name="email" placeholder="email">
+            
+                <br>
+                <h2 id="h2_info">informações da consulta</h2>
+                <input type="text" name="motivo_consulta" placeholder="motivo da consulta">
+                <input type="text" name="data_da_consulta" placeholder="data_da_consulta">
+                <input type="text" name="historico_medico" placeholder="historico medico">
+                <input type="text" name="medicamentos_em_uso" placeholder="medicamentos em uso">
+                <input type="submit" value="Enviar">
+            </form>
+            <br>
+        </div>  
+{% endblock %}

@@ -1,0 +1,67 @@
+.cabecalho {
+    display: flex;
+    justify-content: flex-end; /* Alinha os botões à direita */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 15px; /* Espaçamento interno */
+    margin-left: 50%;
+}
+
+#login {
+    border: none; /* Remove borda */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    flex: 1; /* Permite que o botão cresça */
+    min-width: 120px; /* Largura mínima para garantir que o texto esteja visível */
+    margin-left: 25px; /* Aumenta a margem à esquerda */
+}
+
+#login:first-child {
+    margin-left: 0; /* Remove a margem esquerda do primeiro botão */
+}
+
+#login:last-child {
+    margin-right: 0; /* Remove a margem direita do último botão */
+}
+
+#login a {
+    color: white; /* Cor do texto dos links */
+    padding: 10px 15px; /* Espaçamento interno */
+    border: 2px solid white; /* Borda branca */
+    border-radius: 4px; /* Bordas arredondadas */
+    display: inline-block; /* Permite que o botão se ajuste ao conteúdo */
+    white-space: nowrap; /* Impede a quebra de linha no texto */
+    transition: background-color 0.3s, color 0.3s; /* Suaviza a transição */
+}
+
+#login a:hover {
+    background-color: #51cf82; /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 80%;
+    padding-top: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    padding: 10px;
+}
+input{
+    height: 30px;
+    padding: 10px;
+    margin: 5px;
+}
+
+#h2_info {
+    padding-top: 30px;
+    text-align: center;
+    
+}

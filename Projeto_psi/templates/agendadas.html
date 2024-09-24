@@ -1,0 +1,33 @@
+{% extends 'template_base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="static/agendadas.css">
+{% endblock %}
+
+{% block conteudo %}
+
+    <div id="block_list">
+
+        <h1>Consultas Agendadas</h1>
+        <div id="listar">
+            
+                {% for consulta in consultas %}
+                <div id="consulta">
+                    <ul id="lista_consulta">
+                        <p> {{ consulta['id_consulta']}}° Consulta </p>
+                        <li>Nome do Paciente: {{ consulta['nome'] }} </li>
+                        <li>Email: {{ consulta['email'] }} </li>
+                        <li>Data: {{ consulta['dia'] }} </li>
+                        <li>Horario: {{ consulta['horario'] }} </li>
+                        <li>Motivo da consulta: {{ consulta['motivo'] }} </li>
+                    </ul>
+
+                </div>
+                   
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+
+{% endblock %}

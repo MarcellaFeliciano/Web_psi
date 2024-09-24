@@ -1,0 +1,34 @@
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: 80%;
+}
+.box2{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 45%;
+}
+
+#cadastro{
+    margin-left: 40px;
+    margin-top: -10px;
+    background-color: #c38ac4;
+    border: none;
+    padding: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 40%;
+    padding: 10px;
+}
+input{
+    height: 30px;
+    padding: 10px;
+    margin: 5px;
+}

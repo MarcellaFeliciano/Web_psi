@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Médica</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
+    {% block style %}
+
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <img src="static/imgs/Logo.svg">
+        <div class="cabecalho">
+            <button id="login"><a href="{{url_for('login')}}">Login</a></button>
+            <button id="login"><a href="{{url_for('logout')}}">logout</a></button>
+        </div>
+    </header>
+    <div class="container">
+        <aside>
+            <ul>
+                <li><a href="{{url_for('index')}}">Home</a></li>
+                <li><a href="{{url_for('ficha')}}">Ficha</a></li>
+                <li><a href="{{url_for('marcar_consulta')}}">Marcar consulta</a></li>
+                <li><a href="{{url_for('agendadas')}}">Agendadas</a></li>
+                <li><a href="{{url_for('ver_ficha')}}">Ver Ficha</a></li>
+           
+            </ul>
+        </aside>
+        <section>
+            {% block conteudo %}
+                
+            {% endblock %}
+        </section>
+    </div>
+</body>

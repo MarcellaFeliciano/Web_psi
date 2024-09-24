@@ -1,0 +1,22 @@
+{% extends 'template_base.html' %}
+
+{% block style %}
+    <link rel="stylesheet" href="static/login.css">
+{% endblock %}
+
+{% block conteudo %}
+    <div class="box">
+        <h2>Login</h2>
+        <form action="{{ url_for('login') }}" method="post">
+            <input type="email" name="email" placeholder="email">
+            <input type="password" name="senha" placeholder="senha">
+            <input type="submit" value="Enviar">
+        </form>
+        <div class="box2">
+            <h5>Não tem login?</h5>
+            <button id="cadastro"><a href="{{url_for('cadastro')}}">Cadastre-se</a></button>
+        </div>
+    </div>
+    
+    
+{% endblock %}

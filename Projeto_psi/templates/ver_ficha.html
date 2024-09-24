@@ -1,0 +1,40 @@
+{% extends 'template_base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="static/ver_ficha.css">
+{% endblock %}
+
+{% block conteudo %}
+    <div class="box">
+        <h2>FICHA DO PACIENTE</h2>
+        <br>
+
+        <h2 id="h2_info">Buscar Ficha</h2>
+        
+        <form action="{{ url_for('ver_ficha') }}" method="post">
+            <input type="text" name="nome" placeholder="Nome do Paciente: ">
+            <input type="submit" value="Enviar">
+        </form>
+        <br>
+
+        <div id='ver_ficha'> 
+        {% if ficha is not none %}
+            
+            <p>Nome: {{ ficha['nome'] }}</p>
+            <p>Data de Nascimento: {{ ficha['data_nasc'] }}</p>
+            <p>Gênero: {{ ficha['genero'] }}</p>
+            <p>Endereço: {{ ficha['endereco'] }}</p>
+            <p>Telefone: {{ ficha['telefone'] }}</p>
+            <p>Email: {{ ficha['email'] }}</p>
+            <p>Motivo: {{ ficha['motivo'] }}</p>
+            <p>Data da Consulta: {{ ficha['data_consulta'] }}</p>
+            <p>Histórico do Paciente: {{ ficha['historico'] }}</p>
+            <p>Medicamentos: {{ ficha['medicamentos'] }}</p>
+        {% else %}
+            <p>Nenhuma ficha encontrada.</p>
+        {% endif %}
+
+       </div>
+
+
+{% endblock %}

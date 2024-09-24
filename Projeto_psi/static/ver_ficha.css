@@ -1,0 +1,48 @@
+
+
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+    padding-top: 15px;
+    flex-wrap: wrap;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: 20%;
+    padding: 10px;
+
+}
+input{
+    height: 30px;
+    padding: 10px;
+    margin: 5px;
+}
+
+#h2_info {
+    padding-top: 30px;
+    text-align: center;
+    
+}
+
+#ver_ficha {
+    width: 70%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5px;
+    border: 2px solid #51cf82;
+
+}
+
+#ver_ficha p{
+    padding: 10px;
+    font-size: 20px;
+}

@@ -1,0 +1,123 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    background-color: white;
+    padding: 10px 20px;
+    align-items: center;
+    height: 100px;
+    border-bottom: 1px solid #929292;
+}
+
+header img {
+    width: 350px;
+    margin-left: -30px;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: flex-end; /* Alinha os botões à direita */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 15px; /* Espaçamento interno */
+    margin-left: 50%;
+}
+
+#login {
+    background-color: #c38ac4; /* Fundo transparente para os botões */
+    border: none; /* Remove borda */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    flex: 1; /* Permite que o botão cresça */
+    min-width: 120px; /* Largura mínima para garantir que o texto esteja visível */
+    margin-left: 25px; /* Aumenta a margem à esquerda */
+}
+
+#login:first-child {
+    margin-left: 0; /* Remove a margem esquerda do primeiro botão */
+}
+
+#login:last-child {
+    margin-right: 0; /* Remove a margem direita do último botão */
+}
+
+#login a {
+    color: white; /* Cor do texto dos links */
+    padding: 10px 15px; /* Espaçamento interno */
+    border: 2px solid white; /* Borda branca */
+    border-radius: 4px; /* Bordas arredondadas */
+    display: inline-block; /* Permite que o botão se ajuste ao conteúdo */
+    white-space: nowrap; /* Impede a quebra de linha no texto */
+    transition: background-color 0.3s, color 0.3s; /* Suaviza a transição */
+}
+
+#login a:hover {
+    background-color: #51cf82; /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+}
+
+aside {
+    background-color: #51cf82;
+    width: 20%;
+    height: 100%;
+    padding: 10px;
+    border-left: 1px solid #929292;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 3;
+    background: white;
+    width: 80%;
+    height: 100vh;
+}
+
+ul {
+    list-style: none; /* Remove os marcadores da lista */
+    padding: 0; /* Remove o padding padrão */
+    margin: 0; /* Remove a margem padrão */
+}
+
+li {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    background-color: #c38ac4;
+    margin: 15px;
+    border-radius: 4px;
+    cursor: pointer; /* Adiciona um cursor pointer para o item */
+
+}
+
+li:hover {
+    background-color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    height: 100%;
+    width: 100%; /* Faz o link ocupar toda a área do li */
+
+}
+
+li:hover a {
+    color: #51cf82; /* Mudança na cor do link ao passar o mouse sobre o li */
+}

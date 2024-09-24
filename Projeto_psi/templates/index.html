@@ -1,0 +1,28 @@
+{% extends 'template_base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="static/index.css">
+{% endblock %}
+
+{% block conteudo %}
+    <div class="box">
+        <div id="quadrado">
+            <img src="static/imgs/Consultas.svg" alt="">
+            <h4>Marcar consulta</h4>
+            <br>
+            <button><a href="{{url_for('marcar_consulta')}}">Entrar</a></button>
+        </div>
+        <div id="quadrado">
+            <img src="static/imgs/Relatorios.svg" alt="">
+            <h4>Ficha do Paciente</h4>
+            <br>
+            <button><a href="{{url_for('ficha')}}">Entrar</a></button>
+        </div>
+        <div id="quadrado">
+            <img src="static/imgs/Agendadas.svg" alt="">
+            <h4>Consultas agendadas</h4>
+            <br>
+            <button><a href="{{url_for('agendadas')}}">Entrar</a></button>
+        </div>
+    </div>
+{% endblock %}

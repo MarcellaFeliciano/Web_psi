@@ -1,0 +1,88 @@
+.cabecalho {
+    display: flex;
+    justify-content: flex-end; /* Alinha os botões à direita */
+    align-items: center; /* Centraliza verticalmente */
+    padding: 15px; /* Espaçamento interno */
+    margin-left: 50%;
+}
+
+#login {
+    background-color: transparent; /* Fundo transparente para os botões */
+    border: none; /* Remove borda */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    flex: 1; /* Permite que o botão cresça */
+    min-width: 120px; /* Largura mínima para garantir que o texto esteja visível */
+    margin-left: 25px; /* Aumenta a margem à esquerda */
+}
+
+#login:first-child {
+    margin-left: 0; /* Remove a margem esquerda do primeiro botão */
+}
+
+#login:last-child {
+    margin-right: 0; /* Remove a margem direita do último botão */
+}
+
+#login a {
+    color: white; /* Cor do texto dos links */
+    padding: 10px 15px; /* Espaçamento interno */
+    border: 2px solid white; /* Borda branca */
+    border-radius: 4px; /* Bordas arredondadas */
+    display: inline-block; /* Permite que o botão se ajuste ao conteúdo */
+    white-space: nowrap; /* Impede a quebra de linha no texto */
+    transition: background-color 0.3s, color 0.3s; /* Suaviza a transição */
+}
+
+#login a:hover {
+    background-color: #51cf82; /* Cor de fundo ao passar o mouse */
+    color: white; /* Cor do texto ao passar o mouse */
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 60%;
+    padding: 10px;
+}
+
+#quadrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Alinha verticalmente ao centro */
+    width: 40%;
+    height: 90%;
+    background-color: white;
+    border: 1px solid gray;
+    margin: 10px;
+    padding: 20px; /* Ajuste o padding */
+}
+#quadrado img{
+    width: 150px;
+    height: 150px;
+}
+.box button {
+    border: none; /* Remove a borda dos botões dentro da classe conteudo */
+    background-color: transparent; /* Fundo transparente, se necessário */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+}
+
+a {
+    text-decoration: none;
+    color: white; /* Cor do texto dos links */
+    padding: 10px 15px; /* Espaçamento interno para os links */
+    background-color: #c38ac4; /* Cor de fundo dos links */
+    border-radius: 4px; /* Bordas arredondadas */
+    margin-bottom: 10px; /* Espaço entre os links */
+    display: inline-block; /* Permite o espaçamento */
+}
+
+a:hover {
+    background-color: #ffffff; /* Cor de fundo ao passar o mouse */
+    color: #51cf82; /* Cor do texto ao passar o mouse */
+}
+
+aside {
+    display: none;
+}
