@@ -69,6 +69,9 @@ from case2 import app
 from case2.database import get_connetiom
 from case2.models.user import User
 
+@app.route(/index)
+def index()
+
 ```
 
 
