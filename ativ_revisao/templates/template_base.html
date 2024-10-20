@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade de revisão</title>
+    <link rel="stylesheet" href="static/base.css">
+    {% block style %}
+    {% endblock %}
+</head>
+<body>
+    <div id="conteudo">
+        <header>
+            <h1>Atividade de Revisão</h1>
+           
+            <nav>
+                <a href="{{ url_for('index') }}">Inicial</a>
+                <a href="{{ url_for('dash') }}">Dashboard</a>
+                <a href='{{ url_for("pesquisar") }}'>Pesquisar</a>
+                <a href='{{ url_for("registrar") }}'>Registrar</a>
+                <a href="{{ url_for('login') }}">Login</a>
+                {% block nav %}
+                <a href="{{ url_for('logout') }}">Logout</a>
+                <a href='{{ url_for("perfil") }}'>Perfil</a>
+                {% endblock %}
+
+            </nav>
+            
+    
+        </header>
+    
+        <main>
+    
+            {% block conteudo %}
+    
+            {% endblock %}
+            
+        </main>
+
+    </div> 
+</body>
+</html>

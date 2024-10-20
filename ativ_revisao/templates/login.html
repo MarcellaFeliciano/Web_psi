@@ -1,0 +1,34 @@
+{% extends 'template_base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="static/login.css">
+{% endblock %}
+
+
+    {% block nav %}
+        {% if nome %}
+            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href='{{ url_for("perfil") }}'>Perfil</a>
+        {% endif %}
+
+    {% endblock %}
+
+    {% block conteudo %}
+
+    <div class="conteudo">
+        <div class="card"> 
+            <h1>Faça o Login:</h1>
+            <form action="{{ url_for('login') }}" method="post">
+                <label for="email">Email:</label>
+                <input type="text" name="email" placeholder="Email:">
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" placeholder="Senha:">
+                <input id='bt_enviar' type="submit" value="Enviar">
+            </form>
+
+        </div>
+
+    </div>
+       
+        
+    {% endblock %}

@@ -1,0 +1,40 @@
+{% extends 'template_base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="static/adi_info.css">
+{% endblock %}
+
+
+{% block nav %}
+{% if nome %}
+    <a href="{{ url_for('logout') }}">Logout</a>
+    <a href='{{ url_for("perfil") }}'>Perfil</a>
+{% endif %}
+
+{% endblock %}
+
+    {% block conteudo %}
+
+    <div class="conteudo">
+        <div class="card"> 
+            <h1>Editar suas informações pessoais:</h1>
+            <form action="{{ url_for('edi_info') }}" method="post">
+                <label for="name">Nome Completo:</label>
+                <input type="text" name="nome" placeholder="Nome:">
+                <label for="genero">Genero:</label>
+                <input type="text" name="genero" placeholder="Genero:">
+                <label for="data_nasc">Data de Nascimento:</label>
+                <input type="text" name="data_nasc" placeholder="dd/mm/aaaa:">
+                <label for="endereco">Endereco:</label>
+                <input type="text" name="endereco" placeholder="Endereco:">
+                <label for="telefone">Telefone:</label>
+                <input type="text" name="telefone" placeholder="telefone:">
+                <input id='bt_enviar' type="submit" value="Enviar">
+            </form>
+
+        </div>
+
+    </div>
+       
+        
+    {% endblock %}

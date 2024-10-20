@@ -1,0 +1,53 @@
+.conteudo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    width: 50%;
+    height: 50%;
+    background-color: rgb(133, 168, 220);
+    padding: 100px;
+    padding-top: 50px;
+    
+
+}
+
+.card h1 {
+    padding-bottom: 30px;
+}
+
+.card form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+form label {
+    font-size: 20px;
+
+}
+
+form input {
+    height: 30px;
+
+}
+
+#bt_enviar {
+    background-color: pink;
+    margin-top: 30px;
+    font-size: 20px;
+    margin-left: 130px;
+    margin-right: 130px;
+}
+
+
+.card p {
+    font-size: 16px;
+    margin: 10px;
+    text-align: center;
+}

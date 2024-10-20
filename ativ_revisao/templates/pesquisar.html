@@ -1,0 +1,46 @@
+{% extends 'template_base.html' %}
+
+{% block style %}
+<link rel="stylesheet" href="static/pesquisar.css">
+{% endblock %}
+
+
+    {% block nav %}
+        {% if nome %}
+            <a href="{{ url_for('logout') }}">Logout</a>
+            <a href='{{ url_for("perfil") }}'>Perfil</a>
+        {% endif %}
+
+    {% endblock %}
+
+{% block conteudo %}
+    <div class="box">
+        <h2>Informações sobre Usuário</h2>
+        <br>
+
+        <h2 id="h2_info">Buscar usuário</h2>
+        
+        <form action="{{ url_for('pesquisar') }}" method="post">
+            <input type="text" name="nome" placeholder="Nome do Usuário: ">
+            <input id=bt_pesquisar type="submit" value="Enviar">
+        </form>
+        <br>
+
+        <div id='ver_user'> 
+        {% if user is not none %}
+            
+            <p>Nome: {{ user['nome_completo'] }}</p>
+            <p>Data de Nascimento: {{ user['data_nasc'] }}</p>
+            <p>Gênero: {{ user['genero'] }}</p>
+            <p>Endereço: {{ user['endereco'] }}</p>
+            <p>Telefone: {{ user['telefone'] }}</p>
+            <p>Email: {{ user['email'] }}</p>
+            
+        {% else %}
+            <p>Nenhum usuário encontrado.</p>
+        {% endif %}
+
+       </div>
+
+
+{% endblock %}
