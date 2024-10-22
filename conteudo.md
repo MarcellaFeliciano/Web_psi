@@ -77,10 +77,8 @@ def index()
 
 ## Blueprint
 
-```
-Um Blueprint no Flask é uma maneira de organizar e modularizar diferentes partes da sua aplicação, agrupando um conjunto de views, rotas, e outros componentes relacionados em um único local. Ele permite separar funcionalidades da aplicação em seções independentes, facilitando a manutenção e a escalabilidade do código.
+> Um Blueprint no Flask é uma maneira de organizar e modularizar diferentes partes da sua aplicação, agrupando um conjunto de views, rotas, e outros componentes relacionados em um único local. Ele  >permite separar funcionalidades da aplicação em seções independentes, facilitando a manutenção e a escalabilidade do código.
 
-```
 
 - Organização Modular: Em vez de registrar rotas e views diretamente no objeto da aplicação Flask, você cria um Blueprint para organizar essas partes da aplicação em módulos separados. 
 
