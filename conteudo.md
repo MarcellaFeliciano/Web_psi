@@ -111,8 +111,161 @@ def create_app():
 ```
 
 
+from flask import Flask, render_template
+
+from users import users
+from books import books
+
+app = Flask(__name__, template_folder='templates')
+
+app.register_blueprint(users.bp)
+app.register_blueprint(books.bp)
 
 
 
+templates/
+templates/users
+templates/books
 
 
+bp = Blueprint('users', name __name__, url_prefix =
+
+
+__init__.py --> 
+
+__all__ = [
+'users',
+'models'
+]
+declara os pacotes, onde eu posso -> from users import *
+
+
+### Blueprint Caso 2
+
+> app.py
+```python
+from flask import Flask
+from controllers import users, books
+
+app = Flask(__name__)
+app.register_blueprint(users.bp)
+app.register_blueprint(books.bp)
+```
+> controllers
+> __init__.py
+```python
+all = [
+    'books',
+    'users'
+]
+```
+> users.py
+```python
+from flask import render_template, Blueprint, url_for, request, flash, redirect
+from models.user import User
+
+# módulo de usuários
+bp = Blueprint('users', __name__, url_prefix='/users')
+
+@bp.route('/')
+def index():
+    return render_template('users/index.html', users = User.all())
+
+@bp.route('/register', methods=['POST', 'GET'])
+def register():
+    if request.method == 'POST':
+        email = request.form['email']
+        nome= request.form['nome']
+
+        if not email:
+            flash('Email é obrigatório')
+        else:
+            user = User(email, nome)
+            user.save()
+            return redirect(url_for('users.index'))
+    
+    return render_template('users/register.html')
+```
+> books
+
+```python
+from flask import Flask, render_template, url_for, request, Blueprint, redirect
+from models.user import User
+from models.book import Book
+
+bp = Blueprint('books', __name__, url_prefix='/books')
+
+@bp.route('/')
+def index():
+    return render_template('books/index.html', books = Book.all())
+
+@bp.route('/register', methods=['POST', 'GET'])
+def register():
+
+    if request.method == 'POST':
+        titulo = request.form['titulo']
+        user = request.form['user']
+
+        book = Book(titulo, user)
+        book.save()
+        return redirect(url_for('books.index'))
+
+
+    return render_template('books/register.html', users=User.all())
+
+```
+
+> models
+>__init__.py
+```python
+__all__ = [
+    'user',
+    'book'
+]
+```
+> books.py
+
+```python
+from database import get_connection
+
+class Book:
+    def __init__(self, titulo, user_id):
+        self.titulo = titulo
+        self.user_id = user_id
+
+    def save(self):
+        conn = get_connection()
+        conn.execute("INSERT INTO books(titulo, user_id) values(?,?)", (self.titulo, self.user_id))
+        conn.commit()
+        conn.close()
+        return True
+
+    @classmethod
+    def all(cls):
+        conn = get_connection()
+        books = conn.execute("SELECT * FROM books").fetchall()
+        return books
+```
+> users.py
+```python
+from database import get_connection
+
+class User:
+    def __init__(self, nome, email):
+        self.nome = nome
+        self.email = email
+        
+    def save(self):
+        conn = get_connection()
+        conn.execute("INSERT INTO users(email, nome) values(?,?)", (self.email, self.nome))
+        conn.commit()
+        conn.close()
+        return True
+    
+    @classmethod
+    def all(cls):
+        conn = get_connection()
+        users = conn.execute("SELECT * FROM users").fetchall()
+        return users
+
+```
