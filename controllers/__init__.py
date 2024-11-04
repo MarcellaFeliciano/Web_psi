@@ -1,0 +1,6 @@
+
+all = [
+    'books',
+    'users',
+    'emprestimos'
+]

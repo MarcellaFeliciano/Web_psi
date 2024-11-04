@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Registro de Emprestimos</h1>
+    <div>
+        <h2>Dados</h2>
+        <form action="{{url_for('emprestimos.register')}}" method="post">
+            
+            <label for="">Data</label>
+            <input type="date" placeholder="Data" name="data">
+            <br>
+            <label for="">User</label>
+            <select name="user">
+            {% for user in users %}
+            <option value="{{user.id}}">{{user.nome}}</option>
+            {% endfor %}
+            </select>
+            <br>
+            <label for="">Livro</label>
+            <select name="book">
+            {% for book in books %}
+            <option value="{{book.id}}">{{book.titulo}}</option>
+            {% endfor %}
+            </select>
+            <button>Enviar</button>
+        </form>
+    
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Lista de Emprestimos</h1>
+
+    <a href="{{url_for('emprestimos.register')}}">Fazer um Emprestimo</a>
+    
+    <hr>
+    <h3>Lista de emprestimos</h3>
+    {% for emprestimo in emprestimos %}
+    <p>{{ emprestimo.emp_data }}</p>
+    {% endfor %}
+</body>
+</html>
