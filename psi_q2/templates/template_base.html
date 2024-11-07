@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade de revisão</title>
+    {% block style %}
+    <link rel="stylesheet" href="static/base.css">
+    {% endblock %}
+</head>
+<body>
+    <div id="conteudo">
+        <header>
+            <h1>Gerenciador de Clínica Médica</h1>
+           
+            <nav>
+                <a href="{{ url_for('index') }}">Inicial</a>
+                <a href="{{ url_for('medicos.cadastrar') }}">Cadastro</a>
+                <a href="{{ url_for('pacientes.index') }}">Pacientes</a>
+                <a href="{{ url_for('consultas.index') }}">Consultas</a>
+                <a href="{{ url_for('medicos.login') }}">Login</a>
+                {% block nav %}
+                {% endblock %}
+
+            </nav>
+    
+        </header>
+    
+        <main>
+    
+            {% block conteudo %}
+    
+            {% endblock %}
+            
+        </main>
+
+    </div> 
+</body>
+</html>

@@ -1,0 +1,19 @@
+
+    
+    <h1>Registro de Usuários</h1>
+    <div>
+        <h2>Dados</h2>
+        <form action="{{url_for('pacientes.registrar')}}" method="post">
+           
+            <input type="text" name="nome" placeholder="Nome completo:">
+             
+            <input type="text" name="genero" placeholder="Genero:">
+            
+            <input type="text" name="idade" placeholder="Idade">
+
+            <input type="text" name="telefone" placeholder="Telefone">
+
+            <button>Enviar</button>
+        </form>
+    
+    </div>
