@@ -269,3 +269,80 @@ class User:
         return users
 
 ```
+
+
+
+
+## SQL ALCHEMY
+
+- Classes de metodo não precisam que o objeto esteja instanciado a classe, já as outras funlções são ligadas ao objeto
+
+```python
+from sqlalchemy import create_engine, Integer, ForeignKey
+from sqlalchemy.orm import Session # manipular sessão
+from sqlalchemy.orm import DeclarativeBase #base
+from sqlalchemy.orm import Mapped, mapped_column, relationship
+from typing import List
+
+from sqlalchemy import select
+
+class Base(DeclarativeBase):
+    pass
+
+
+# modo declarativo
+# quando a classe herda a classe base o banco entende que elas estão relacionadas
+class User(Base):
+    __tablename__ = 'user' # exite a tabela / cria a tabela no modelo
+
+    # estou mapeando no banco de dados que o atributo/coluna id será do tipo int - definir / declarar no modelo o atributo
+    id: Mapped[int] = mapped_column(primary_key=True) 
+    nome: Mapped[str]
+    email: Mapped[str] = mapped_column(unique=True) # só pode ocorrer uma vez o valor
+    books: Mapped[List['Book']] = relationship() # relacionamento de 1 para M Pois o user tem varios lviros
+
+    def __repr__(self): # formatar o print do select/ objeto representado em string
+        return f"(nome={self.nome}, email={self.email})"
+
+
+
+class Book(Base):
+    __tablename__ = 'books'
+    id: Mapped[int] = mapped_column(primary_key=True)
+    titulo: Mapped[str]
+    author: Mapped[str] = mapped_column(ForeignKey('user.id'))
+
+
+engine = create_engine('sqlite:///teste.db') # fabrica de conexão com o banco
+
+session = Session(bind=engine) # sessão que manipula os dados do banco
+
+# criar o banco
+Base.metadata.create_all(engine)
+
+# Adicionar user
+usuario = User(nome='marcella', email='evely@g')
+session.add(usuario)
+session.commit()
+
+#declaracao = select(User) # o select prepara a operação sql (select * from tb da classe User)
+#print(declaracao)
+
+
+
+sql = select(User)
+lista = session.execute(sql)
+print(lista)
+
+for user in lista:
+    print(user)
+
+sql_filtro = select(User).where(User.email == 'evely@g')
+resutado = session.execute(sql_filtro)
+
+print(resutado.all())
+
+sql_filtro2 = select(User.email).where(User.email == 'evely@g')
+resutado = session.execute(sql_filtro2)
+print(resutado.all())
+```
