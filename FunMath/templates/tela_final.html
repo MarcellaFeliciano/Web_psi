@@ -1,0 +1,76 @@
+{% extends 'template_base.html' %}
+
+    {% block style %}
+    <link rel="stylesheet" href="static/style/base.css">
+    {% endblock %}
+
+    {% block conteudo %}
+    <section id="section_inicial_jg">
+        <div class="conteudo_final">
+
+            {% if trofeu: %}
+            
+            <div id="box_trofeu">
+                <div id="div_inicial_jg">
+                    <h1 id="titulo-jogo">QUIZ MATEMÁTICO</h1>
+                </div>
+                <div id="div_img_trofeu">
+                    <img src= {{ trofeu }} alt="">  <!-- mesmo com isso vermelho da certo -->
+                </div>
+            </div>
+            {% endif %}
+
+            <div id="box_inicial_jg">
+                <div id="div_inicial_jg">
+                    <h1 id="titulo-jogo">QUIZ MATEMÁTICO</h1>
+                </div>
+                <div id="quad1_final">
+                    <div>
+                        <a href="{{url_for('Fases_quiz')}}">continuar</a>
+                    </div>
+                    <div>
+                        <a href="{{url_for('Index')}}">voltar para pagina inicial</a>
+                    </div>   
+
+                    {% if trofeu: %}
+                    <h1>{{mensagem}}</h1>
+                    <h4>{{msg_trofeu}}</h4> 
+                    {% endif %}
+
+                </div>
+                <div id="quad2_inicial_jg">
+                    <div class="descricao_inicial_jg">
+                        <div>
+                            <h4 id="desc_text">Responda corretamente o máximo de questões que conseguir para ganhar pontos.</h4>
+                            <ul>
+                                <li><p>Cuidado com o tempo; Este jogo terá um cronometro marcando o seu tempo em cada questão.</p></li>
+                                <li><p>Avalie seu conhecimento.</p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+    </section>
+    
+<script>
+    // Função para mostrar a div e depois o conteúdo
+    function mostrarDiv() {
+        const div = document.getElementById('box_trofeu');
+        const conteudo = document.getElementById('box_inicial_jg');
+
+        conteudo.style.display = 'none';
+        div.style.display = 'flex'; // Mostra a div
+
+        // Esconde a div após 5 segundos e mostra o conteúdo
+        setTimeout(() => {
+            div.style.display = 'none'; // Esconde a div
+            conteudo.style.display = 'flex'; // Mostra o conteúdo
+        }, 3000);
+    }
+
+    // Chama a função para mostrar a div após o carregamento da página
+    window.onload = mostrarDiv;
+</script>
+
+    {% endblock %}

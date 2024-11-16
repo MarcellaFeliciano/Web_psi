@@ -1,0 +1,45 @@
+{% extends 'template_base.html' %}
+
+    {% block style %}
+    <link rel="stylesheet" href="static/style/base.css">
+    {% endblock %}
+
+    {% block conteudo %}
+        <aside class="aside_inicial">
+            <!-- contêiner para a introdução -->
+        </aside>
+        
+        <section id="section_inicial">
+            <!-- Seção principal para exibir os jogos disponíveis -->
+            <div class="jogos">
+                <!-- Primeiro jogo: Trilha da raposa -->
+                <div id="trilha">
+                    <h2>Trilha da raposa</h2> <!-- Título do jogo -->
+                    <a href="{{url_for('Trilha')}}">
+                        <img src="static/imgs/jogo-trilha.png" alt=""> <!-- Imagem do jogo -->
+                    </a>
+                    <h4>Trilha: Ajude Nikki a chegar nas suas amigas galinhas.</h4> <!-- Descrição do jogo -->
+                </div>
+        
+                <!-- Segundo jogo: Quebra-cabeça -->
+                <div id="quebra-cabeca">
+                    <h2>Quebra-cabeça</h2> <!-- Título do jogo -->
+                    <a href="{{url_for('Quebra_cabeca')}}">
+                        <img src="static/imgs/jogo-quebra-c.png" alt=""> <!-- Imagem do jogo -->
+                    </a>
+                    <h4>Quebra-Cabeça: Resolva problemas matemáticos para desbloquear imagens</h4> <!-- Descrição do jogo -->
+                </div>
+        
+                <!-- Terceiro jogo: Quiz matemático -->
+                <div id="quiz">
+                    <h2>Quiz matemático</h2> <!-- Título do jogo -->
+                    <a href="{{url_for('Inicial_quiz')}}"> <!-- Link para a página do quiz -->
+                        <img src="static/imgs/jogo-quiz.png" alt=""> <!-- Imagem do jogo -->
+                    </a>
+                    <h4>Quiz matemático: Responda o máximo de questões corretamente.</h4> <!-- Descrição do jogo -->
+                </div>
+            </div>
+        </section>
+
+    {% endblock %}
+
