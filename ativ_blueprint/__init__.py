@@ -1,0 +1,4 @@
+all = [
+    'books',
+    'users'
+]
