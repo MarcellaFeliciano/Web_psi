@@ -30,6 +30,12 @@ EXEMPLO
   app.py
 > img
 
+
+
+
+
+flask routers - ver as rotas da aplicação
+
 ```
 - Começar pelo controlador
 - Fazer os templates
