@@ -1,0 +1,44 @@
+{% extends 'template_base.html' %}
+
+    {% block style %}
+    <link rel="stylesheet" href="static/index.css">
+    {% endblock %}
+
+        {% block nav %}
+            {% if nome %}
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% endif %}
+
+        {% endblock %}
+
+    {% block conteudo %}
+
+
+        <div class="conteudo">    
+        {% if nome %}
+        <div class="card"> 
+            <h1>Bem Vindo ao Site {{nome}}!</h1>
+                <p>Funcionalidades:</p>
+
+                <a href="{{ url_for('registrar_pratos') }}">Cadastrar Pratos </a> 
+                <a href="{{ url_for('filtrar_pratos') }}">Filtrar Pratos</a>
+            
+            <p></div>
+        {% else %}
+            <div class="card"> 
+                <h1>Bem Vindo ao Site</h1>
+                <p>Bem-vindo ao Sistema de Encomendas de Comida Caseira! Aqui, você mesmo pode fazer o seu delicioso cardápio! Não perca a oportunidade de fazer parte de uma 
+                    comunidade onde cada clique pode abrir novas portas e melhorar seu dia a dia. É rápido, seguro e gratuito - inscreva-se já!</p>
+                <h2><a href="{{ url_for('cadastro') }}">Faça o seu cadastro!</a></h2>
+
+            </div>
+        {% endif %}
+
+            <div>
+                <img>
+            </div>
+
+        </div>
+        
+        
+    {% endblock %}

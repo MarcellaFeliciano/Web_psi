@@ -1,0 +1,17 @@
+
+
+
+CREATE TABLE tb_users (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    email TEXT NOT NULL,
+    senha TEXT NOT NULL
+);
+
+CREATE TABLE tb_pratos (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome TEXT NOT NULL,
+    preco TEXT NOT NULL,
+    tipo TEXT NOT NULL
+);
+

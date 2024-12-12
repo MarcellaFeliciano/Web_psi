@@ -1,0 +1,85 @@
+.conteudo {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(133, 168, 220);
+    padding: 100px;
+    padding-top: 50px;
+
+    
+
+}
+.card2 {
+    width: 80%;
+    height: 90%;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    padding: 10px;
+    background: lightslategray;
+
+}
+
+#filtro {
+    width: 30%;
+    height: 60%;
+    background-color: whitesmoke;
+    margin: 5px;
+    padding-left: 20px;
+}
+
+
+.card h1 {
+    padding-bottom: 30px;
+}
+
+.card form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+form {
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+
+}
+form label {
+    font-size: 20px;
+
+}
+
+form input {
+    height: 30px;
+    width: 250px;
+    margin-bottom: 10px;
+
+}
+
+#bt_enviar {
+    background-color: pink;
+    margin-top: 30px;
+    font-size: 20px;
+    margin-left: 130px;
+    margin-right: 130px;
+}
+
+
+.card p {
+    font-size: 16px;
+    margin: 10px;
+    text-align: center;
+}
