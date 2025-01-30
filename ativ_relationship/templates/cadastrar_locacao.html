@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Locação</title>
+</head>
+<body>
+    <h1>Cadastrar Locação</h1>
+    <form method="POST" action="{{ url_for('cadastrar_locacao')}}">
+
+        <label for="cliente_id">ID do Cliente:</label>
+        <select name="cliente_id" required>
+            <option value="" selected disabled>Selecione o Cliente</option>
+            {% for cliente in clientes %}
+                <option value="{{cliente.id}}">{{cliente.nome}}</option>
+            {% endfor %}
+        </select>
+
+        <label for="veiculo_id">ID do Veículo:</label>
+
+        <select name="veiculo_id" required>
+            <option value="" selected disabled>Selecione o Veiculo</option>
+            {% for veiculo in veiculos %}
+                <option value="{{veiculo.id}}">{{veiculo.nome}}</option>
+            {% endfor %}
+        </select>
+
+    
+        <label for="data">Data da Locação:</label>
+        <input type="date" id="data" name="data" required>
+        
+        <button type="submit">Cadastrar</button>
+    </form>
+    <br>
+</body>
+</html>

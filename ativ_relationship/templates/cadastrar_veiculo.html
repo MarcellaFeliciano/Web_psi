@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Veículo</title>
+</head>
+<body>
+    <h1>Cadastrar Veículo</h1>
+    <form method="POST" action="{{url_for('cadastrar_veiculo')}}">
+        <label for="modelo">Modelo:</label>
+        <input type="text" id="modelo" name="modelo" required>
+        <button type="submit">Cadastrar</button>
+    </form>
+    <br>
+

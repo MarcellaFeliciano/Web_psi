@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Cadastros</title>
+</head>
+<body>
+    <h1>Lista de Cadastros</h1>
+
+    <h2>Clientes</h2>
+    <ul>
+        {% for cliente in clientes %}
+            <li>ID: {{ cliente.id }} - Nome: {{ cliente.nome }}</li>
+        {% else %}
+            <li>Nenhum cliente cadastrado.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Veículos</h2>
+    <ul>
+        {% for veiculo in veiculos %}
+            <li>ID: {{ veiculo.id }} - Modelo: {{ veiculo.nome }}</li>
+        {% else %}
+            <li>Nenhum veículo cadastrado.</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Locações</h2>
+    <ul>
+        {% for locacao in locacoes %}
+            <li>ID: {{ locacao.id }} - Cliente ID: {{ locacao.cliente_id }} - Veículo ID: {{ locacao.veiculo_id }} - Data: {{ locacao.data }}</li>
+        {% else %}
+            <li>Nenhuma locação cadastrado</li>
+        {% endfor %}
+</body>
+</html>
